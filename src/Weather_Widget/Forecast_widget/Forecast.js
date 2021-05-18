@@ -11,7 +11,7 @@ const API_KEY='8e9305559a7e405eac02592862afe99b';
 function Forecast(props) {
 
 const [state,setState]=useState([]);
-const [error,setError]=useState(false);
+//const [error,setError]=useState(false);
 
    useEffect(() => {
        var Api_path='';
@@ -26,10 +26,10 @@ Api_path='https://api.weatherbit.io/v2.0/forecast/daily?lat='+props.values.lat+'
     .then(res=>{
         setState(res.data.data);
         console.log(state);
-        setError(false);
+        //setError(false);
     })
     .catch(err=>console.log(err));
-    setError(true);
+   // setError(true);
     
   }, [props]);
 
@@ -39,7 +39,7 @@ Api_path='https://api.weatherbit.io/v2.0/forecast/daily?lat='+props.values.lat+'
         return(
             
 <div class="container">
-<div class="rows">
+<div class="rows" id="row_head"> 
     {state==[] || state==undefined? <div className="error">There was a problem loading the forecast data</div>:
 //   {
 //    error ? <div className="error">There was a problem loading the forecast data</div>:

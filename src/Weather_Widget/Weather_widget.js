@@ -45,7 +45,7 @@ class Weather extends Component{
         
       } 
       else {
-        alert('Your browser does not support location tracking, or permission is denied.');
+       console.log('Your browser does not support location tracking, or permission is denied.');
       }
     }
 
